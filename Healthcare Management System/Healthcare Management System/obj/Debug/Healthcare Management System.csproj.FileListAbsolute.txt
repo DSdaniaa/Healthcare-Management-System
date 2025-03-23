@@ -1,0 +1,13 @@
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare Management System.csproj.AssemblyReference.cache
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.TitleForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.Properties.Resources.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare Management System.csproj.GenerateResource.cache
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare Management System.csproj.CoreCompileInputs.cache
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\bin\Debug\Healthcare Management System.exe.config
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\bin\Debug\Healthcare Management System.exe
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\bin\Debug\Healthcare Management System.pdb
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare Management System.exe
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare Management System.pdb
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.PatientRegistrationForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.RoleSelectionForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.AppointmentSchedulingForm.resources
