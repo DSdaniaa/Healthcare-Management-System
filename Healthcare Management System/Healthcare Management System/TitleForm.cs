@@ -101,8 +101,8 @@ namespace Healthcare_Management_System
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Navigate to the Login Form
-            //LoginForm loginForm = new LoginForm();
-            //loginForm.Show();
+            RoleSelectionLogin loginForm = new RoleSelectionLogin();
+            loginForm.Show();
             this.Hide(); // Hide the title form
         }
 

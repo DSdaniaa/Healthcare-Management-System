@@ -11,3 +11,6 @@ C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\
 C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.PatientRegistrationForm.resources
 C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.RoleSelectionForm.resources
 C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.AppointmentSchedulingForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.RoleSelectionLogin.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.AddPatientForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.PatientMedicalHistoryListForm.resources

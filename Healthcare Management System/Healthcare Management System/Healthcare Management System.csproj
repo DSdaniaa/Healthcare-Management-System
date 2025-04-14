@@ -46,17 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPatientForm.Designer.cs">
+      <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppointmentSchedulingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppointmentSchedulingForm.Designer.cs">
       <DependentUpon>AppointmentSchedulingForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientMedicalHistoryListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientMedicalHistoryListForm.Designer.cs">
+      <DependentUpon>PatientMedicalHistoryListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoleSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RoleSelectionForm.Designer.cs">
       <DependentUpon>RoleSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoleSelectionLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoleSelectionLogin.Designer.cs">
+      <DependentUpon>RoleSelectionLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="TitleForm.cs">
       <SubType>Form</SubType>
@@ -72,14 +90,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddPatientForm.resx">
+      <DependentUpon>AddPatientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppointmentSchedulingForm.resx">
       <DependentUpon>AppointmentSchedulingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientMedicalHistoryListForm.resx">
+      <DependentUpon>PatientMedicalHistoryListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PatientRegistrationForm.resx">
       <DependentUpon>PatientRegistrationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RoleSelectionForm.resx">
       <DependentUpon>RoleSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoleSelectionLogin.resx">
+      <DependentUpon>RoleSelectionLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TitleForm.resx">
       <DependentUpon>TitleForm.cs</DependentUpon>
