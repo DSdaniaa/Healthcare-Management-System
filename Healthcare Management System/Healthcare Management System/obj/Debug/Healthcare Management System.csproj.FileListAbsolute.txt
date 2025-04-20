@@ -14,3 +14,10 @@ C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\
 C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.RoleSelectionLogin.resources
 C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.AddPatientForm.resources
 C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.PatientMedicalHistoryListForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.AppointmentListForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.AdminRegistration.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.DoctorRegistrationForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.LoginForm.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.LoginForm1.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.LoginForm2.resources
+C:\Users\dania\Desktop\CS\6th SEMESTER\SPM\Project\Healthcare Management System\Healthcare Management System\obj\Debug\Healthcare_Management_System.BillForm.resources

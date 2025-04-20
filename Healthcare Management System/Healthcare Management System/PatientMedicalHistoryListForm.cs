@@ -13,7 +13,7 @@ namespace Healthcare_Management_System
     public partial class PatientMedicalHistoryListForm : Form
     {
         private DataGridView dataGridViewMedicalHistory;
-        private Button btnRefresh, btnAddPatient, btnRemovePatient, btnBack;
+        private Button btnRefresh, btnAddPatient, btnRemovePatient, btnBack, btnUpdate;
         private TextBox txtSearch;
         private Label lblTitle, lblSearch;
         private List<MedicalHistory> medicalHistoryList;
@@ -31,7 +31,7 @@ namespace Healthcare_Management_System
             // Form setup
             this.Text = "Patient Medical Records";
             this.Size = new System.Drawing.Size(1200, 700);
-            this.BackColor = Color.FromArgb(240, 248, 255); // AliceBlue background
+            this.BackColor = Color.FromArgb(240, 248, 255);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.Resize += new EventHandler(Form_Resize);
 
@@ -39,7 +39,7 @@ namespace Healthcare_Management_System
             lblTitle = new Label();
             lblTitle.Text = "PATIENT MEDICAL RECORDS";
             lblTitle.Font = new Font("Segoe UI", 20, FontStyle.Bold);
-            lblTitle.ForeColor = Color.FromArgb(0, 102, 204); // Dark blue
+            lblTitle.ForeColor = Color.FromArgb(0, 102, 204);
             lblTitle.AutoSize = true;
             this.Controls.Add(lblTitle);
 
@@ -72,7 +72,7 @@ namespace Healthcare_Management_System
             btnRefresh = new Button();
             btnRefresh.Text = "Refresh Records";
             btnRefresh.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            btnRefresh.BackColor = Color.FromArgb(0, 122, 204); // Blue
+            btnRefresh.BackColor = Color.FromArgb(0, 122, 204);
             btnRefresh.ForeColor = Color.White;
             btnRefresh.Size = new System.Drawing.Size(150, 40);
             btnRefresh.Click += new EventHandler(btnRefresh_Click);
@@ -81,7 +81,7 @@ namespace Healthcare_Management_System
             btnAddPatient = new Button();
             btnAddPatient.Text = "Add New Patient";
             btnAddPatient.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            btnAddPatient.BackColor = Color.FromArgb(76, 175, 80); // Green
+            btnAddPatient.BackColor = Color.FromArgb(76, 175, 80);
             btnAddPatient.ForeColor = Color.White;
             btnAddPatient.Size = new System.Drawing.Size(150, 40);
             btnAddPatient.Click += new EventHandler(btnAddPatient_Click);
@@ -90,16 +90,25 @@ namespace Healthcare_Management_System
             btnRemovePatient = new Button();
             btnRemovePatient.Text = "Remove Patient";
             btnRemovePatient.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            btnRemovePatient.BackColor = Color.FromArgb(211, 47, 47); // Red
+            btnRemovePatient.BackColor = Color.FromArgb(211, 47, 47);
             btnRemovePatient.ForeColor = Color.White;
             btnRemovePatient.Size = new System.Drawing.Size(150, 40);
             btnRemovePatient.Click += new EventHandler(btnRemovePatient_Click);
             this.Controls.Add(btnRemovePatient);
 
+            // New Update Button
+            btnUpdate = new Button();
+            btnUpdate.Text = "Update";
+            btnUpdate.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btnUpdate.BackColor = Color.FromArgb(255, 193, 7); // Amber color
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Size = new System.Drawing.Size(150, 40);
+            this.Controls.Add(btnUpdate);
+
             btnBack = new Button();
             btnBack.Text = "Back";
             btnBack.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            btnBack.BackColor = Color.FromArgb(158, 158, 158); // Gray
+            btnBack.BackColor = Color.FromArgb(158, 158, 158);
             btnBack.ForeColor = Color.White;
             btnBack.Size = new System.Drawing.Size(150, 40);
             btnBack.Click += new EventHandler(btnBack_Click);
@@ -238,11 +247,12 @@ namespace Healthcare_Management_System
             dataGridViewMedicalHistory.Size = new Size(this.ClientSize.Width - 2 * padding,
                 this.ClientSize.Height - txtSearch.Bottom - 3 * padding - 50);
 
-            // Buttons
+            // Buttons (updated to include Update button)
             int buttonY = dataGridViewMedicalHistory.Bottom + padding;
             btnRefresh.Location = new Point(padding, buttonY);
             btnAddPatient.Location = new Point(btnRefresh.Right + padding, buttonY);
             btnRemovePatient.Location = new Point(btnAddPatient.Right + padding, buttonY);
+            btnUpdate.Location = new Point(btnRemovePatient.Right + padding, buttonY);
             btnBack.Location = new Point(this.ClientSize.Width - btnBack.Width - padding, buttonY);
         }
 
@@ -346,9 +356,5 @@ namespace Healthcare_Management_System
         public DateTime LastVisitDate { get; set; }
         public DateTime NextAppointment { get; set; }
     }
-
-   
 }
 
-
- 
