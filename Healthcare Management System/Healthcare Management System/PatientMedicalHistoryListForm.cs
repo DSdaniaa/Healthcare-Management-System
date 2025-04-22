@@ -338,6 +338,8 @@ namespace Healthcare_Management_System
 
         private void PatientMedicalHistoryListForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
         }
     }
 

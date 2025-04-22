@@ -370,7 +370,7 @@ namespace Healthcare_Management_System
 
         private void AppointmentSchedulingForm_Load(object sender, EventArgs e)
         {
-            // This method is not needed for now
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

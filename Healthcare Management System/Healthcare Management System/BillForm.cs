@@ -325,6 +325,7 @@ namespace Healthcare_Management_System
 
         private void BillForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
 
         }
 

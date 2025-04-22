@@ -249,7 +249,7 @@ namespace Healthcare_Management_System
         }
         private void FirstPage_Load(object sender, EventArgs e)
         {
-            // This method is not needed for now
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

@@ -289,6 +289,8 @@ namespace Healthcare_Management_System
 
         private void RoleSelectionLogin_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
+
         }
     }
 }

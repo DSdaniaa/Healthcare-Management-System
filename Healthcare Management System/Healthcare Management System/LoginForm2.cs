@@ -315,6 +315,7 @@ namespace Healthcare_Management_System
 
         private void LoginForm2_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
 
         }
     }

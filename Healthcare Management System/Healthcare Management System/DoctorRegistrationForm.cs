@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Healthcare_Management_System
@@ -18,21 +12,39 @@ namespace Healthcare_Management_System
         private Button btnRegister, btnReset, btnBack;
         private Label lblTitle, lblFullName, lblContactInfo, lblDOB, lblGender, lblAddress,
                       lblLicenseNumber, lblSpecialization, lblYearsExperience;
+        private Panel panelMain, panelForm;
 
         public DoctorRegistrationForm()
         {
             InitializeComponent();
             CreateControls();
             this.Resize += new EventHandler(DoctorRegistrationForm_Resize);
+            this.DoubleBuffered = true;
         }
 
         private void CreateControls()
         {
             // Form setup
             this.Text = "Doctor Registration System";
-            this.Size = new System.Drawing.Size(900, 750);
+            this.Size = new Size(1000, 800);
             this.BackColor = Color.FromArgb(240, 248, 255);
             this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
+            // Main container panel
+            panelMain = new Panel();
+            panelMain.BackColor = Color.White;
+            panelMain.BorderStyle = BorderStyle.FixedSingle;
+            panelMain.Size = new Size(900, 700);
+            this.Controls.Add(panelMain);
+
+            // Form container panel
+            panelForm = new Panel();
+            panelForm.BackColor = Color.FromArgb(250, 250, 250);
+            panelForm.BorderStyle = BorderStyle.FixedSingle;
+            panelForm.Size = new Size(800, 550);
+            panelMain.Controls.Add(panelForm);
 
             // Title Label
             lblTitle = new Label();
@@ -40,180 +52,198 @@ namespace Healthcare_Management_System
             lblTitle.Font = new Font("Segoe UI", 20, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(0, 102, 204);
             lblTitle.AutoSize = true;
-            this.Controls.Add(lblTitle);
+            panelForm.Controls.Add(lblTitle);
 
             // Full Name
             lblFullName = new Label();
             lblFullName.Text = "Full Name:";
-            lblFullName.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblFullName.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblFullName.ForeColor = Color.FromArgb(64, 64, 64);
             lblFullName.AutoSize = true;
-            this.Controls.Add(lblFullName);
+            panelForm.Controls.Add(lblFullName);
 
             txtFullName = new TextBox();
-            txtFullName.Font = new Font("Segoe UI", 11);
-            txtFullName.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(txtFullName);
+            txtFullName.Font = new Font("Segoe UI", 10);
+            txtFullName.Size = new Size(300, 26);
+            panelForm.Controls.Add(txtFullName);
 
             // Contact Info
             lblContactInfo = new Label();
             lblContactInfo.Text = "Contact Number:";
-            lblContactInfo.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblContactInfo.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblContactInfo.ForeColor = Color.FromArgb(64, 64, 64);
             lblContactInfo.AutoSize = true;
-            this.Controls.Add(lblContactInfo);
+            panelForm.Controls.Add(lblContactInfo);
 
             txtContactInfo = new TextBox();
-            txtContactInfo.Font = new Font("Segoe UI", 11);
-            txtContactInfo.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(txtContactInfo);
+            txtContactInfo.Font = new Font("Segoe UI", 10);
+            txtContactInfo.Size = new Size(300, 26);
+            panelForm.Controls.Add(txtContactInfo);
 
             // Date of Birth
             lblDOB = new Label();
             lblDOB.Text = "Date of Birth:";
-            lblDOB.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblDOB.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblDOB.ForeColor = Color.FromArgb(64, 64, 64);
             lblDOB.AutoSize = true;
-            this.Controls.Add(lblDOB);
+            panelForm.Controls.Add(lblDOB);
 
             dateTimePickerDOB = new DateTimePicker();
-            dateTimePickerDOB.Font = new Font("Segoe UI", 11);
+            dateTimePickerDOB.Font = new Font("Segoe UI", 10);
             dateTimePickerDOB.Format = DateTimePickerFormat.Short;
-            dateTimePickerDOB.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(dateTimePickerDOB);
+            dateTimePickerDOB.Size = new Size(300, 26);
+            panelForm.Controls.Add(dateTimePickerDOB);
 
             // Gender
             lblGender = new Label();
             lblGender.Text = "Gender:";
-            lblGender.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblGender.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblGender.ForeColor = Color.FromArgb(64, 64, 64);
             lblGender.AutoSize = true;
-            this.Controls.Add(lblGender);
+            panelForm.Controls.Add(lblGender);
 
             comboBoxGender = new ComboBox();
-            comboBoxGender.Font = new Font("Segoe UI", 11);
+            comboBoxGender.Font = new Font("Segoe UI", 10);
             comboBoxGender.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxGender.Items.AddRange(new string[] { "Male", "Female", "Other", "Prefer not to say" });
-            comboBoxGender.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(comboBoxGender);
+            comboBoxGender.Size = new Size(300, 26);
+            panelForm.Controls.Add(comboBoxGender);
 
             // Address
             lblAddress = new Label();
             lblAddress.Text = "Address:";
-            lblAddress.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblAddress.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblAddress.ForeColor = Color.FromArgb(64, 64, 64);
             lblAddress.AutoSize = true;
-            this.Controls.Add(lblAddress);
+            panelForm.Controls.Add(lblAddress);
 
             txtAddress = new TextBox();
-            txtAddress.Font = new Font("Segoe UI", 11);
+            txtAddress.Font = new Font("Segoe UI", 10);
             txtAddress.Multiline = true;
             txtAddress.ScrollBars = ScrollBars.Vertical;
-            txtAddress.Size = new System.Drawing.Size(350, 60);
-            this.Controls.Add(txtAddress);
+            txtAddress.Size = new Size(300, 60);
+            panelForm.Controls.Add(txtAddress);
 
             // Medical License Number
             lblLicenseNumber = new Label();
             lblLicenseNumber.Text = "Medical License Number:";
-            lblLicenseNumber.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblLicenseNumber.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblLicenseNumber.ForeColor = Color.FromArgb(64, 64, 64);
             lblLicenseNumber.AutoSize = true;
-            this.Controls.Add(lblLicenseNumber);
+            panelForm.Controls.Add(lblLicenseNumber);
 
             txtLicenseNumber = new TextBox();
-            txtLicenseNumber.Font = new Font("Segoe UI", 11);
-            txtLicenseNumber.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(txtLicenseNumber);
+            txtLicenseNumber.Font = new Font("Segoe UI", 10);
+            txtLicenseNumber.Size = new Size(300, 26);
+            panelForm.Controls.Add(txtLicenseNumber);
 
             // Specialization
             lblSpecialization = new Label();
             lblSpecialization.Text = "Specialization:";
-            lblSpecialization.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblSpecialization.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblSpecialization.ForeColor = Color.FromArgb(64, 64, 64);
             lblSpecialization.AutoSize = true;
-            this.Controls.Add(lblSpecialization);
+            panelForm.Controls.Add(lblSpecialization);
 
             comboBoxSpecialization = new ComboBox();
-            comboBoxSpecialization.Font = new Font("Segoe UI", 11);
+            comboBoxSpecialization.Font = new Font("Segoe UI", 10);
             comboBoxSpecialization.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBoxSpecialization.Items.AddRange(new string[] {
                 "Cardiology", "Dermatology", "Neurology", "Pediatrics",
                 "Orthopedics", "Gynecology", "General Surgery", "Endocrinology",
                 "Ophthalmology", "Psychiatry", "Urology", "Oncology"
             });
-            comboBoxSpecialization.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(comboBoxSpecialization);
+            comboBoxSpecialization.Size = new Size(300, 26);
+            panelForm.Controls.Add(comboBoxSpecialization);
 
             // Years of Experience
             lblYearsExperience = new Label();
             lblYearsExperience.Text = "Years of Experience:";
-            lblYearsExperience.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            lblYearsExperience.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             lblYearsExperience.ForeColor = Color.FromArgb(64, 64, 64);
             lblYearsExperience.AutoSize = true;
-            this.Controls.Add(lblYearsExperience);
+            panelForm.Controls.Add(lblYearsExperience);
 
             txtYearsExperience = new TextBox();
-            txtYearsExperience.Font = new Font("Segoe UI", 11);
-            txtYearsExperience.Size = new System.Drawing.Size(350, 30);
-            this.Controls.Add(txtYearsExperience);
+            txtYearsExperience.Font = new Font("Segoe UI", 10);
+            txtYearsExperience.Size = new Size(300, 26);
+            panelForm.Controls.Add(txtYearsExperience);
 
             // Buttons
             btnRegister = new Button();
             btnRegister.Text = "Register Doctor";
-            btnRegister.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnRegister.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             btnRegister.BackColor = Color.FromArgb(76, 175, 80);
             btnRegister.ForeColor = Color.White;
-            btnRegister.Size = new System.Drawing.Size(180, 45);
+            btnRegister.Size = new Size(180, 40);
             btnRegister.FlatStyle = FlatStyle.Flat;
             btnRegister.FlatAppearance.BorderSize = 0;
             btnRegister.Cursor = Cursors.Hand;
             btnRegister.Click += new EventHandler(btnRegister_Click);
-            this.Controls.Add(btnRegister);
+            btnRegister.MouseEnter += Button_MouseEnter;
+            btnRegister.MouseLeave += Button_MouseLeave;
+            panelMain.Controls.Add(btnRegister);
 
             btnReset = new Button();
             btnReset.Text = "Reset Form";
-            btnReset.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnReset.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             btnReset.BackColor = Color.FromArgb(239, 83, 80);
             btnReset.ForeColor = Color.White;
-            btnReset.Size = new System.Drawing.Size(180, 45);
+            btnReset.Size = new Size(180, 40);
             btnReset.FlatStyle = FlatStyle.Flat;
             btnReset.FlatAppearance.BorderSize = 0;
             btnReset.Cursor = Cursors.Hand;
             btnReset.Click += new EventHandler(btnReset_Click);
-            this.Controls.Add(btnReset);
+            btnReset.MouseEnter += Button_MouseEnter;
+            btnReset.MouseLeave += Button_MouseLeave;
+            panelMain.Controls.Add(btnReset);
 
             btnBack = new Button();
             btnBack.Text = "Back";
-            btnBack.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            btnBack.Font = new Font("Segoe UI", 11, FontStyle.Bold);
             btnBack.BackColor = Color.FromArgb(158, 158, 158);
             btnBack.ForeColor = Color.White;
-            btnBack.Size = new System.Drawing.Size(180, 45);
+            btnBack.Size = new Size(180, 40);
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.Cursor = Cursors.Hand;
             btnBack.Click += new EventHandler(btnBack_Click);
-            this.Controls.Add(btnBack);
+            btnBack.MouseEnter += Button_MouseEnter;
+            btnBack.MouseLeave += Button_MouseLeave;
+            panelMain.Controls.Add(btnBack);
 
             UpdateControlPositions();
         }
 
         private void UpdateControlPositions()
         {
-            int padding = 30;
-            int yOffset = lblTitle.Bottom + padding;
+            // Center the main panel
+            panelMain.Location = new Point(
+                (this.ClientSize.Width - panelMain.Width) / 2,
+                (this.ClientSize.Height - panelMain.Height) / 2
+            );
+
+            // Center the form panel
+            panelForm.Location = new Point(
+                (panelMain.Width - panelForm.Width) / 2,
+                20
+            );
+
+            int padding = 20;
+            int yOffset = lblTitle.Bottom + padding * 2;
 
             // Left column labels
-            lblFullName.Location = new Point(padding, yOffset);
-            lblContactInfo.Location = new Point(padding, lblFullName.Bottom + padding);
-            lblDOB.Location = new Point(padding, lblContactInfo.Bottom + padding);
-            lblGender.Location = new Point(padding, lblDOB.Bottom + padding);
-            lblAddress.Location = new Point(padding, lblGender.Bottom + padding);
-            lblLicenseNumber.Location = new Point(padding, lblAddress.Bottom + padding + 60);
-            lblSpecialization.Location = new Point(padding, lblLicenseNumber.Bottom + padding);
-            lblYearsExperience.Location = new Point(padding, lblSpecialization.Bottom + padding);
+            lblFullName.Location = new Point(padding * 2, yOffset);
+            lblContactInfo.Location = new Point(padding * 2, lblFullName.Bottom + padding);
+            lblDOB.Location = new Point(padding * 2, lblContactInfo.Bottom + padding);
+            lblGender.Location = new Point(padding * 2, lblDOB.Bottom + padding);
+            lblAddress.Location = new Point(padding * 2, lblGender.Bottom + padding);
+            lblLicenseNumber.Location = new Point(padding * 2, lblAddress.Bottom + padding + 60);
+            lblSpecialization.Location = new Point(padding * 2, lblLicenseNumber.Bottom + padding);
+            lblYearsExperience.Location = new Point(padding * 2, lblSpecialization.Bottom + padding);
 
             // Right column inputs
-            int inputX = this.ClientSize.Width - 400;
+            int inputX = panelForm.Width - 350;
             txtFullName.Location = new Point(inputX, yOffset);
             txtContactInfo.Location = new Point(inputX, txtFullName.Bottom + padding);
             dateTimePickerDOB.Location = new Point(inputX, txtContactInfo.Bottom + padding);
@@ -223,15 +253,40 @@ namespace Healthcare_Management_System
             comboBoxSpecialization.Location = new Point(inputX, txtLicenseNumber.Bottom + padding);
             txtYearsExperience.Location = new Point(inputX, comboBoxSpecialization.Bottom + padding);
 
-            // Buttons
-            int buttonY = Math.Max(
-                lblYearsExperience.Bottom + padding,
-                txtYearsExperience.Bottom + padding
-            ) + 20;
+            // Title position
+            lblTitle.Location = new Point(
+                (panelForm.Width - lblTitle.Width) / 2,
+                padding * 2
+            );
 
-            btnRegister.Location = new Point(padding, buttonY);
-            btnReset.Location = new Point(btnRegister.Right + padding, buttonY);
-            btnBack.Location = new Point(this.ClientSize.Width - btnBack.Width - padding, buttonY);
+            // Buttons position
+            int buttonY = panelMain.Height - btnRegister.Height - 30;
+            int centerX = panelMain.Width / 2;
+
+            btnRegister.Location = new Point(centerX - btnRegister.Width - 20, buttonY);
+            btnReset.Location = new Point(centerX + 20, buttonY);
+            btnBack.Location = new Point(panelMain.Width - btnBack.Width - 30, buttonY);
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            button.BackColor = Color.FromArgb(
+                Math.Min(button.BackColor.R + 30, 255),
+                Math.Min(button.BackColor.G + 30, 255),
+                Math.Min(button.BackColor.B + 30, 255)
+            );
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            if (button == btnRegister)
+                button.BackColor = Color.FromArgb(76, 175, 80);
+            else if (button == btnReset)
+                button.BackColor = Color.FromArgb(239, 83, 80);
+            else if (button == btnBack)
+                button.BackColor = Color.FromArgb(158, 158, 158);
         }
 
         private void DoctorRegistrationForm_Resize(object sender, EventArgs e)
@@ -277,7 +332,6 @@ namespace Healthcare_Management_System
 
             string[] names = fullName.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-            // Handle case where splitting results in empty array
             if (names.Length == 0)
             {
                 Random randd = new Random();
@@ -285,7 +339,6 @@ namespace Healthcare_Management_System
             }
 
             string firstName = names[0].ToLower();
-            // Traditional way to get last element instead of names[^1]
             string lastName = names.Length > 1 ? names[names.Length - 1].ToLower() : "";
 
             Random rand = new Random();
@@ -326,11 +379,41 @@ namespace Healthcare_Management_System
             roleForm.Show();
             this.Hide();
         }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Add subtle shadow effect to main panel
+            ControlPaint.DrawBorder(e.Graphics, panelMain.Bounds,
+                Color.FromArgb(200, 200, 200), 1, ButtonBorderStyle.Solid,
+                Color.FromArgb(200, 200, 200), 1, ButtonBorderStyle.Solid,
+                Color.FromArgb(200, 200, 200), 1, ButtonBorderStyle.Solid,
+                Color.FromArgb(200, 200, 200), 1, ButtonBorderStyle.Solid);
+
+            // Add outer glow effect
+            using (Pen pen = new Pen(Color.FromArgb(220, 230, 240), 10))
+            {
+                Rectangle rect = new Rectangle(5, 5, this.ClientSize.Width - 10, this.ClientSize.Height - 10);
+                e.Graphics.DrawRectangle(pen, rect);
+            }
+
+            // Add styling to form panel
+            using (Pen pen = new Pen(Color.FromArgb(220, 220, 220), 1))
+            {
+                e.Graphics.DrawRectangle(pen, panelForm.Left, panelForm.Top, panelForm.Width, panelForm.Height);
+            }
+        }
+
         private void DoctorRegistrationForm_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
 
         }
     }
 }
+
+    
+
 
    
